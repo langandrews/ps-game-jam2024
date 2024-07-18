@@ -34,4 +34,3 @@ shape = SubResource("WorldBoundaryShape2D_a7kg0")
 
 [node name="Player" parent="." instance=ExtResource("2_tbyuu")]
 position = Vector2(529, 417)
-acceleration = 50
