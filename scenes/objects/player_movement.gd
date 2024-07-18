@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var acceleration = 50
 @export var friction_factor = 0.8
 @export var gravity = 20
-@export var extra_gravity_multiplier = 2
+@export var extra_gravity_multiplier = 2.0
 
 @export var jump_velocity = 900
 

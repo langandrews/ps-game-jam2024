@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdqhbdfwearyq"]
+
+[ext_resource type="Theme" uid="uid://ev8axxme0crn" path="res://main_theme.tres" id="1_xwxgh"]
+[ext_resource type="Script" path="res://scenes/ui/LevelSelector.gd" id="2_hxvrd"]
+[ext_resource type="PackedScene" uid="uid://d4lnn3on8hc8y" path="res://scenes/ui/level_item.tscn" id="3_8d2f3"]
+[ext_resource type="PackedScene" uid="uid://cx2fton4oi0if" path="res://scenes/levels/luke_test_level.tscn" id="4_i5gwo"]
+[ext_resource type="PackedScene" uid="uid://kkynn8yhfweu" path="res://scenes/levels/andrew_test_level.tscn" id="5_cqbyq"]
+
+[node name="LevelSelect" type="Node"]
+
+[node name="LevelSelect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_top = 24.0
+offset_right = 156.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme = ExtResource("1_xwxgh")
+text = "Select a Level"
+fit_content = true
+autowrap_mode = 0
+
+[node name="LevelHolder" type="Panel" parent="LevelSelect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -546.0
+offset_top = -546.0
+offset_right = 546.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect/LevelHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="LevelSelect/LevelHolder/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+script = ExtResource("2_hxvrd")
+
+[node name="LukeTest" parent="LevelSelect/LevelHolder/MarginContainer/GridContainer" instance=ExtResource("3_8d2f3")]
+layout_mode = 2
+text = "L"
+level_scene = ExtResource("4_i5gwo")
+
+[node name="AndrewTest" parent="LevelSelect/LevelHolder/MarginContainer/GridContainer" instance=ExtResource("3_8d2f3")]
+layout_mode = 2
+text = "A"
+level_scene = ExtResource("5_cqbyq")
