@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ui/LevelSelector.gd" id="2_hxvrd"]
 [ext_resource type="PackedScene" uid="uid://d4lnn3on8hc8y" path="res://scenes/ui/level_item.tscn" id="3_8d2f3"]
 [ext_resource type="PackedScene" uid="uid://cx2fton4oi0if" path="res://scenes/levels/luke_test_level.tscn" id="4_i5gwo"]
-[ext_resource type="PackedScene" uid="uid://b0d1yrgxk87j0" path="res://scenes/levels/luke_test_level2.tscn" id="5_o7k88"]
+[ext_resource type="PackedScene" uid="uid://kkynn8yhfweu" path="res://scenes/levels/andrew_test_level.tscn" id="5_cqbyq"]
 
 [node name="LevelSelect" type="Node"]
 
@@ -80,4 +80,4 @@ level_scene = ExtResource("4_i5gwo")
 [node name="AndrewTest" parent="LevelSelect/LevelHolder/MarginContainer/GridContainer" instance=ExtResource("3_8d2f3")]
 layout_mode = 2
 text = "A"
-level_scene = ExtResource("5_o7k88")
+level_scene = ExtResource("5_cqbyq")
