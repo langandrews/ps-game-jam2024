@@ -7,6 +7,8 @@
 size = Vector2(127, 126)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
 script = ExtResource("1_nyb3n")
 
 [node name="Visuals" type="Node2D" parent="."]
@@ -20,4 +22,6 @@ position = Vector2(-0.5, -64)
 shape = SubResource("RectangleShape2D_d2wgp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -52)
+limit_bottom = 500
 position_smoothing_enabled = true
