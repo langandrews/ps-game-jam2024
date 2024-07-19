@@ -11,7 +11,7 @@ func _ready():
 	children.assign(get_children())
 	selected = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("move_left"):
 		selected -= 1
 	if Input.is_action_just_pressed("move_right"):
