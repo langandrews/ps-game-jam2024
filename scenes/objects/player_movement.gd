@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var gravity = 20
 @export var extra_gravity_multiplier = 2.0
 
-@export var jump_velocity = 900
+@export var jump_velocity = 100
 
 var last_ground_touch_frame = -100000
 var buffered_jump_frame = -100000

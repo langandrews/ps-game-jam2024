@@ -1,27 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=6 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player_movement.gd" id="1_nyb3n"]
-[ext_resource type="Texture2D" uid="uid://b7mghee837bok" path="res://icon.svg" id="1_qhmtw"]
+[ext_resource type="Texture2D" uid="uid://cw4uu3mpqyjy3" path="res://assets/JamPlayer.png" id="2_pbdkp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wgp"]
-size = Vector2(127, 126)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwra"]
+atlas = ExtResource("2_pbdkp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wba2t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwra")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bfmx"]
+size = Vector2(18.7123, 20)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
 collision_layer = 2
 script = ExtResource("1_nyb3n")
+max_horizontal_speed = 200
+max_vertical_speed = 500
+acceleration = 2
+jump_velocity = 300
 
 [node name="Visuals" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("1_qhmtw")
-offset = Vector2(0, -64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -64)
-shape = SubResource("RectangleShape2D_d2wgp")
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, -52)
+position = Vector2(0, -0.999989)
+scale = Vector2(-0.318653, 0.296743)
+zoom = Vector2(5, 5)
 limit_bottom = 500
 position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wba2t")
+animation = &"idle"
+frame_progress = 0.214446
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.369494, 4)
+scale = Vector2(0.573899, 0.388208)
+shape = SubResource("RectangleShape2D_2bfmx")
