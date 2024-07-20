@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xv42l2gjhwoe"
-path="res://.godot/imported/Outlines.png-f621c632b3e9d32a7b679ef7dd0350af.ctex"
+uid="uid://dhxi82qyn1m4a"
+path="res://.godot/imported/Oulines2.png-ddb141095ddf1923cd0cbf99648626ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Outlines.png"
-dest_files=["res://.godot/imported/Outlines.png-f621c632b3e9d32a7b679ef7dd0350af.ctex"]
+source_file="res://assets/Oulines2.png"
+dest_files=["res://.godot/imported/Oulines2.png-ddb141095ddf1923cd0cbf99648626ee.ctex"]
 
 [params]
 
