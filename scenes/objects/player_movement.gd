@@ -16,7 +16,8 @@ var jump_start_frame = -100000
 func _physics_process(_delta):
 	update_coyote()
 	
-	velocity.y += gravity * extra_gravity_multiplier if velocity.y else 1.0
+	velocity.y += gravity * (extra_gravity_multiplier if velocity.y > 0 else 1.0)
+	if is_on_floor(): velocity.y = 0
 	
 	var input_horizontal := Input.get_axis("move_left", "move_right")
 	velocity.x += (input_horizontal * acceleration)
