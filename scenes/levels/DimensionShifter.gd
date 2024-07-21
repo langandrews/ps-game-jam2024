@@ -1,40 +1,49 @@
 extends Node2D
 
-@export var offset = 400
+@export var dark_offset := Vector2(0, 400)
 @onready var player = $"../Player"
 @onready var ground_tiles = $"../Ground Tiles"
+
+@export var buffer_window_seconds := 0.2
+var buffer_frame = -10000000
 
 var isCurrnetDark = false
 var offsets := [
 	Vector2(0, 0),
-	Vector2(4, 0),
-	Vector2(-4, 0),
-	Vector2(0, 4),
-	Vector2(0, -4),
+	Vector2(2, 0),
+	Vector2(-2, 0),
+	Vector2(0, 2),
+	Vector2(0, -2),
 ]
 
 func _ready():
 	SignalBus.OnSwap.connect(swap)
 
 func _physics_process(_delta):
-	if not Input.is_action_just_pressed("swap_dimensions"): return
+	if Input.is_action_just_pressed("swap_dimensions"):
+		update_buffer()
+	elif not is_buffering(): return
 	
 	var testPosition = player.position
-	testPosition.y += get_offset(!isCurrnetDark) - 8
+	testPosition += get_offset(!isCurrnetDark) - Vector2(0, 8)
 	for offset in offsets:
 		var tilePos = ground_tiles.local_to_map(testPosition + offset)
 		var tile = ground_tiles.get_cell_tile_data(1, tilePos)
 		var isEmpty = tile == null
 		if isEmpty:
 			SignalBus.OnSwap.emit(!isCurrnetDark)
+			buffer_frame = -1000000
 			return
-	
-	
 
 func swap(isDark: bool):
 	isCurrnetDark = isDark
-	player.position.y += get_offset(isDark)
+	player.position += get_offset(isDark)
 
-func get_offset(isDark: bool) -> int:
-	return offset if isDark else -offset
-	
+func get_offset(isDark: bool) -> Vector2:
+	return dark_offset if isDark else -1 * dark_offset
+
+func update_buffer():
+	buffer_frame = Engine.get_physics_frames()
+
+func is_buffering() -> bool:
+	return Engine.get_physics_frames() - buffer_frame < buffer_window_seconds * Engine.physics_ticks_per_second
