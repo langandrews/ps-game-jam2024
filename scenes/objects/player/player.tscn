@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=8 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
 [ext_resource type="Texture2D" uid="uid://b7mghee837bok" path="res://icon.svg" id="2_puqnq"]
+[ext_resource type="Script" path="res://scenes/objects/player/ResetBehavior.gd" id="3_w244u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qodgv"]
+bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo2bu"]
+bg_color = Color(0.980139, 0.980139, 0.980139, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wgp"]
 size = Vector2(51.8103, 75.6521)
@@ -19,6 +26,19 @@ script = ExtResource("1_vc2qc")
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_puqnq")
 offset = Vector2(0, -64)
+
+[node name="ProgressBar" type="ProgressBar" parent="Visuals"]
+offset_left = -32.0
+offset_top = -120.0
+offset_right = 32.0
+offset_bottom = -112.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qodgv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mo2bu")
+max_value = 1.0
+step = 0.001
+value = 0.6
+show_percentage = false
+script = ExtResource("3_w244u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.0948496, -64)
