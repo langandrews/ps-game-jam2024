@@ -13,7 +13,12 @@ var last_ground_touch_frame = -100000
 var buffered_jump_frame = -100000
 var jump_start_frame = -100000
 
-func _physics_process(_delta):
+var reset_timer = 0.0
+
+func _physics_process(delta):
+	handle_movement(delta)
+
+func handle_movement(delta):
 	update_coyote()
 	
 	velocity.y += gravity * (extra_gravity_multiplier if velocity.y > 0 else 1.0)
