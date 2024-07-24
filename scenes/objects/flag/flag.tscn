@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgbde1t0kl7m0"]
+
+[ext_resource type="Script" path="res://scenes/objects/flag/FlagBehavior.gd" id="1_b8ugw"]
+[ext_resource type="Texture2D" uid="uid://bejcciwcr2wlu" path="res://assets/flag.png" id="2_d0a3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phgbu"]
+size = Vector2(12, 15)
+
+[node name="Flag" type="Node2D"]
+script = ExtResource("1_b8ugw")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_phgbu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d0a3k")
+offset = Vector2(0, -8)
+
+[connection signal="area_entered" from="Hitbox" to="." method="onCollected"]

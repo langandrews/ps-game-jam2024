@@ -2,7 +2,6 @@ extends Node
 class_name LevelItem
 
 @export var text: String = "1"
-@export var level_scene: PackedScene
 
 @onready var background = $Background
 @onready var label = $MarginContainer/Label
@@ -16,6 +15,3 @@ func on_highlight():
 
 func on_lowlight():
 	background.modulate.a = 0
-
-func load_level():
-	SignalBus.LoadScene.emit(level_scene)
