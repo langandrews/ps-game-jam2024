@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameData" load_steps=5 format=3 uid="uid://bevtr6ybxp23"]
+
+[ext_resource type="Resource" uid="uid://ch3jrmbnsk7mr" path="res://data/levels/level_test_0.tres" id="1_5wxc8"]
+[ext_resource type="Script" path="res://data/types/game_data.gd" id="1_eak1a"]
+[ext_resource type="Resource" uid="uid://h7lt54a7xx87" path="res://data/levels/level_test_1.tres" id="2_n7ss7"]
+[ext_resource type="Resource" uid="uid://ci3rtns2mfjlv" path="res://data/levels/level_test_2.tres" id="3_jeqhn"]
+
+[resource]
+script = ExtResource("1_eak1a")
+levels = Array[Resource("res://data/types/level_data.gd")]([ExtResource("1_5wxc8"), ExtResource("2_n7ss7"), ExtResource("3_jeqhn")])

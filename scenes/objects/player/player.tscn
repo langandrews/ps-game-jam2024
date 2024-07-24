@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6lj0afg0ugr"]
+
+[ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
+[ext_resource type="Texture2D" uid="uid://b7mghee837bok" path="res://icon.svg" id="2_puqnq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wgp"]
+size = Vector2(51.8103, 75.6521)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_himjt"]
+size = Vector2(54, 79)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
+script = ExtResource("1_vc2qc")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_puqnq")
+offset = Vector2(0, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0948496, -64)
+shape = SubResource("RectangleShape2D_d2wgp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -52)
+limit_bottom = 500
+position_smoothing_enabled = true
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, -63.5)
+shape = SubResource("RectangleShape2D_himjt")
