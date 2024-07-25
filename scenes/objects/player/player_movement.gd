@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerMovement
 
 @export var max_horizontal_speed = 500
 @export var max_vertical_speed = 5000
