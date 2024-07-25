@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=15 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
-[ext_resource type="Texture2D" uid="uid://b7mghee837bok" path="res://icon.svg" id="2_puqnq"]
+[ext_resource type="Texture2D" uid="uid://cw4uu3mpqyjy3" path="res://assets/JamPlayer.png" id="3_3pl8x"]
 [ext_resource type="Script" path="res://scenes/objects/player/ResetBehavior.gd" id="3_w244u"]
+[ext_resource type="Script" path="res://scenes/objects/player/PlayerAnimator.gd" id="4_1b48k"]
+[ext_resource type="Script" path="res://scenes/objects/player/death.gd" id="4_08wnq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qodgv"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
@@ -10,11 +12,44 @@ bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo2bu"]
 bg_color = Color(0.980139, 0.980139, 0.980139, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wgp"]
-size = Vector2(51.8103, 75.6521)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4g2x"]
+atlas = ExtResource("3_3pl8x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1m"]
+atlas = ExtResource("3_3pl8x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpn3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4g2x")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj1m")
+}],
+"loop": true,
+"name": &"light",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4egm"]
+bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67cbv"]
+bg_color = Color(0.980139, 0.980139, 0.980139, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_himjt"]
 size = Vector2(54, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12voh"]
+size = Vector2(51.8103, 75.6521)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
@@ -22,10 +57,6 @@ collision_layer = 2
 script = ExtResource("1_vc2qc")
 
 [node name="Visuals" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("2_puqnq")
-offset = Vector2(0, -64)
 
 [node name="ProgressBar" type="ProgressBar" parent="Visuals"]
 offset_left = -32.0
@@ -40,9 +71,25 @@ value = 0.6
 show_percentage = false
 script = ExtResource("3_w244u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.0948496, -64)
-shape = SubResource("RectangleShape2D_d2wgp")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(0, -40)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_dpn3u")
+animation = &"light"
+script = ExtResource("4_1b48k")
+
+[node name="ProgressBar2" type="ProgressBar" parent="Visuals"]
+offset_left = -32.0
+offset_top = -120.0
+offset_right = 32.0
+offset_bottom = -112.0
+theme_override_styles/background = SubResource("StyleBoxFlat_r4egm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_67cbv")
+max_value = 1.0
+step = 0.001
+value = 0.6
+show_percentage = false
+script = ExtResource("3_w244u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, -52)
@@ -56,3 +103,11 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2(0, -63.5)
 shape = SubResource("RectangleShape2D_himjt")
+
+[node name="Death" type="Node2D" parent="PickupArea"]
+script = ExtResource("4_08wnq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.03444e-07, -37.8261)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_12voh")

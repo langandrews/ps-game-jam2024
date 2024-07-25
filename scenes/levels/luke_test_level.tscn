@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cx2fton4oi0if"]
+[gd_scene load_steps=17 format=3 uid="uid://cx2fton4oi0if"]
 
 [ext_resource type="PackedScene" uid="uid://da6lj0afg0ugr" path="res://scenes/objects/player/player.tscn" id="1_1lmwx"]
 [ext_resource type="Texture2D" uid="uid://cw4uu3mpqyjy3" path="res://assets/JamPlayer.png" id="2_b2hyo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dhxi82qyn1m4a" path="res://assets/Oulines2.png" id="6_bjc2g"]
 [ext_resource type="Script" path="res://DimensionShifter.gd" id="7_0i0xf"]
 [ext_resource type="PackedScene" uid="uid://cgbde1t0kl7m0" path="res://scenes/objects/flag/flag.tscn" id="8_805mb"]
+[ext_resource type="PackedScene" uid="uid://dunwwxk0qalhp" path="res://scenes/objects/spikes/spikes.tscn" id="9_y7ens"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4g2x"]
 atlas = ExtResource("2_b2hyo")
@@ -198,5 +199,8 @@ dark_offset = Vector2(0, 432)
 
 [node name="Flag" parent="." instance=ExtResource("8_805mb")]
 position = Vector2(344, 368)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("9_y7ens")]
+position = Vector2(88, 0)
 
 [editable path="Player"]
