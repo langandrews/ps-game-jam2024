@@ -1,10 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=30 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
 [ext_resource type="Texture2D" uid="uid://db2cioqw8skbc" path="res://assets/JamPlayer-Sheet.png" id="2_nlqjp"]
 [ext_resource type="Script" path="res://scenes/objects/player/ResetBehavior.gd" id="3_w244u"]
 [ext_resource type="Script" path="res://scenes/objects/player/PlayerAnimator.gd" id="4_1b48k"]
 [ext_resource type="Script" path="res://scenes/objects/player/death.gd" id="4_08wnq"]
+[ext_resource type="Shader" path="res://scenes/swap.gdshader" id="5_8es1u"]
+[ext_resource type="Texture2D" uid="uid://dpidjuuhnw7pj" path="res://assets/white.png" id="6_6g78y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af1tn"]
 atlas = ExtResource("2_nlqjp")
@@ -157,6 +159,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo2bu"]
 bg_color = Color(0.980139, 0.980139, 0.980139, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecjyv"]
+shader = ExtResource("5_8es1u")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_himjt"]
 size = Vector2(14, 18)
 
@@ -199,6 +204,22 @@ script = ExtResource("3_w244u")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, -36)
 zoom = Vector2(4, 4)
+
+[node name="SwapVFX" type="TextureRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_ecjyv")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6g78y")
+expand_mode = 1
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 8

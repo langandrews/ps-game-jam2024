@@ -12,14 +12,14 @@ func _process(delta):
 		if abs(player.get_real_velocity().x) < 0.5:
 			idle()
 		else:
-			face_direction(player.get_real_velocity().x > 0)
+			face_direction(player.get_real_velocity().x < 0)
 			run()
 	else:
 		jump()
 
 func face_direction(is_left: bool):
-	if flip_h != is_left: return
-	flip_h = !is_left
+	if flip_h == is_left: return
+	flip_h = is_left
 
 func jump():
 	if current_animation_id == "jump": return
