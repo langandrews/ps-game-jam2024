@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if player.is_on_floor():
-		if abs(player.get_real_velocity().x) < 0.1:
+		if abs(player.get_real_velocity().x) < 0.5:
 			idle()
 		else:
 			face_direction(player.get_real_velocity().x > 0)

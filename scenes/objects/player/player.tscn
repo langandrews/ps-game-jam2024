@@ -180,7 +180,7 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dpn3u")
 animation = &"run_light"
 autoplay = "idle_light"
-frame_progress = 0.374091
+frame_progress = 0.45463
 script = ExtResource("4_1b48k")
 
 [node name="ProgressBar" type="ProgressBar" parent="Visuals"]
