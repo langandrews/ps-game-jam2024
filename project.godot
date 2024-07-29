@@ -23,6 +23,7 @@ aseprite_executable_path="C:/Program Files (x86)/Steam/steamapps/common/Aseprite
 
 SignalBus="*res://autoload/SignalBus.gd"
 Global="*res://autoload/GlobalData.tscn"
+SoundManager="*res://autoload/sound_manager.tscn"
 
 [dotnet]
 
