@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=31 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
 [ext_resource type="Texture2D" uid="uid://db2cioqw8skbc" path="res://assets/JamPlayer-Sheet.png" id="2_nlqjp"]
 [ext_resource type="Script" path="res://scenes/objects/player/ResetBehavior.gd" id="3_w244u"]
 [ext_resource type="Script" path="res://scenes/objects/player/PlayerAnimator.gd" id="4_1b48k"]
 [ext_resource type="Script" path="res://scenes/objects/player/death.gd" id="4_08wnq"]
+[ext_resource type="Shader" path="res://scenes/swap.gdshader" id="5_8es1u"]
+[ext_resource type="Texture2D" uid="uid://dpidjuuhnw7pj" path="res://assets/white.png" id="6_6g78y"]
+[ext_resource type="Script" path="res://scenes/objects/player/SwapVFX.gd" id="7_60twd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af1tn"]
 atlas = ExtResource("2_nlqjp")
@@ -157,6 +160,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo2bu"]
 bg_color = Color(0.980139, 0.980139, 0.980139, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ecjyv"]
+shader = ExtResource("5_8es1u")
+shader_parameter/center = Vector2(0.5, 0.65)
+shader_parameter/force = 0.015
+shader_parameter/size = 0.0
+shader_parameter/width = 0.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_himjt"]
 size = Vector2(14, 18)
 
@@ -184,6 +194,7 @@ frame_progress = 0.45463
 script = ExtResource("4_1b48k")
 
 [node name="ProgressBar" type="ProgressBar" parent="Visuals"]
+visible = false
 offset_left = -6.0
 offset_top = -18.0
 offset_right = 6.0
@@ -200,11 +211,29 @@ script = ExtResource("3_w244u")
 position = Vector2(-2, -36)
 zoom = Vector2(4, 4)
 
+[node name="SwapVFX" type="TextureRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_ecjyv")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6g78y")
+expand_mode = 1
+script = ExtResource("7_60twd")
+
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+visible = false
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_himjt")
 
@@ -212,7 +241,7 @@ shape = SubResource("RectangleShape2D_himjt")
 script = ExtResource("4_08wnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 5
+visible = false
 position = Vector2(-9.53674e-07, -7.50002)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_12voh")
