@@ -6,7 +6,7 @@ func _ready():
 
 func swap(_isDark):
 	var tween := get_tree().create_tween()
-	tween.tween_method(update_shader, 0.0, 1.0, .2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	tween.tween_method(update_shader, 0.0, 1.0, 0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 	tween.finished.connect(func(): update_shader(0.0))
 
 func update_shader(value: float):

@@ -4,8 +4,10 @@ extends Node2D
 @onready var player = $"../Player"
 @onready var ground_tiles = $"../Ground Tiles"
 
-@export var buffer_window_seconds := 0.2
+@export var buffer_window_seconds := 0.25
+@export var swap_cooldown_seconds := 0.2
 var buffer_frame = -10000000
+var last_swap_frame = 0
 
 var isCurrnetDark = false
 var offsets := [
@@ -23,6 +25,10 @@ func _physics_process(_delta):
 		update_buffer()
 	elif not is_buffering(): return
 	
+	var frames_since_last_swap = Engine.get_physics_frames() - last_swap_frame
+	if frames_since_last_swap < swap_cooldown_seconds * Engine.physics_ticks_per_second:
+		return
+	
 	var testPosition = player.position
 	testPosition += get_offset(!isCurrnetDark) - Vector2(0, 8)
 	for offset in offsets:
@@ -32,6 +38,7 @@ func _physics_process(_delta):
 		if isEmpty:
 			SignalBus.OnSwap.emit(!isCurrnetDark)
 			buffer_frame = -1000000
+			last_swap_frame = Engine.get_physics_frames()
 			return
 
 func swap(isDark: bool):
