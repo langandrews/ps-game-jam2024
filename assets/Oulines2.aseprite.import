@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3jakgn1aw5bj"
-path="res://.godot/imported/JamPlayer.aseprite-92ff380e84184d6cef55c178e198b957.ctex"
+uid="uid://dindc54em3fi7"
+path="res://.godot/imported/Oulines2.aseprite-971ad2444704142a9db6f319e519ba32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JamPlayer.aseprite"
-dest_files=["res://.godot/imported/JamPlayer.aseprite-92ff380e84184d6cef55c178e198b957.ctex"]
+source_file="res://assets/Oulines2.aseprite"
+dest_files=["res://.godot/imported/Oulines2.aseprite-971ad2444704142a9db6f319e519ba32.ctex"]
 
 [params]
 

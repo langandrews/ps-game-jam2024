@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3jakgn1aw5bj"
-path="res://.godot/imported/JamPlayer.aseprite-92ff380e84184d6cef55c178e198b957.ctex"
+uid="uid://e5x4few67m51"
+path="res://.godot/imported/Platforms.png-b677c25384442bf260d9d99548ec8cd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JamPlayer.aseprite"
-dest_files=["res://.godot/imported/JamPlayer.aseprite-92ff380e84184d6cef55c178e198b957.ctex"]
+source_file="res://Platforms.png"
+dest_files=["res://.godot/imported/Platforms.png-b677c25384442bf260d9d99548ec8cd0.ctex"]
 
 [params]
 
