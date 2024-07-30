@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4lnn3on8hc8y"]
+[gd_scene load_steps=6 format=3 uid="uid://d4lnn3on8hc8y"]
 
 [ext_resource type="Script" path="res://scenes/ui/level_select.gd" id="1_jj0pn"]
+[ext_resource type="Texture2D" uid="uid://bcrgomerfenkj" path="res://assets/check.png" id="2_iomhr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybo2k"]
 
@@ -57,3 +58,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CompletedIcon" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_iomhr")

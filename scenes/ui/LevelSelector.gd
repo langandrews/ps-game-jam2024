@@ -14,6 +14,7 @@ func _ready():
 		var level = Global.game_data.levels[i]
 		var level_selection = LEVEL_ITEM.instantiate()
 		level_selection.text = str(i + 1)
+		level_selection.is_complete = level.is_cleared
 		add_child(level_selection)
 	children.assign(get_children())
 	selected = 0

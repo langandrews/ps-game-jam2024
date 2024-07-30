@@ -14,3 +14,7 @@ func loadScene(scene: PackedScene):
 		child.queue_free()
 	var new_scene = scene.instantiate()
 	add_child(new_scene)
+
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		loadScene(LEVEL_SELECT)

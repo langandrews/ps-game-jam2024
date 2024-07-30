@@ -38,17 +38,14 @@ autowrap_mode = 0
 
 [node name="LevelHolder" type="Panel" parent="LevelSelect"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -546.0
-offset_top = -546.0
+offset_top = 98.0
 offset_right = 546.0
-offset_bottom = -25.0
+offset_bottom = 619.0
 grow_horizontal = 2
-grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="LevelSelect/LevelHolder"]
 layout_mode = 1
