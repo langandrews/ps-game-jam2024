@@ -5,6 +5,7 @@
 
 [node name="JumpDash" instance=ExtResource("1_q2p66")]
 script = ExtResource("2_mvco8")
+is_dark_dash = true
 
 [node name="PotionSpriteLight" parent="." index="0"]
 region_rect = Rect2(0, 16, 16, 16)
