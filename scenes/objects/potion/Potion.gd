@@ -6,5 +6,5 @@ var is_dark = false
 func _ready():
 	SignalBus.OnSwap.connect(func(new_val): is_dark = new_val)
 
-func use():
+func use(user: Node2D):
 	pass

@@ -35,7 +35,7 @@ func handle_movement(delta):
 	if Input.is_action_just_pressed("use_potion"):
 		for child in potion_slot.get_children():
 			if child is Potion:
-				child.use()
+				child.use(self)
 				child.queue_free()
 	
 	update_coyote()
@@ -51,6 +51,11 @@ func handle_movement(delta):
 	
 	#if abs(input_horizontal) < 0.01 and is_on_floor():
 	
+	if is_double_jumping:
+		is_double_jumping = false
+		is_jumping = false
+		velocity.y = -jump_velocity
+	
 	if velocity.y > 0: is_jumping = false
 	if Input.is_action_just_pressed("jump"):
 		if can_jump():
@@ -62,10 +67,6 @@ func handle_movement(delta):
 	elif not Input.is_action_pressed("jump") and is_jumping and not is_min_jump_window():
 		velocity.y *= 0.1
 		is_jumping = false
-	
-	if is_double_jumping:
-		is_double_jumping = false
-		velocity.y = -jump_velocity
 	
 	if is_dashing:
 		is_dashing = false
