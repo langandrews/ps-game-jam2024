@@ -195,7 +195,6 @@ frame_progress = 0.45463
 script = ExtResource("4_1b48k")
 
 [node name="ProgressBar" type="ProgressBar" parent="Visuals"]
-visible = false
 offset_left = -6.0
 offset_top = -18.0
 offset_right = 6.0
