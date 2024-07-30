@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bejcciwcr2wlu" path="res://assets/flag.png" id="2_d0a3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phgbu"]
-size = Vector2(12, 15)
+size = Vector2(8, 11)
 
 [node name="Flag" type="Node2D"]
 script = ExtResource("1_b8ugw")
