@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://da6lj0afg0ugr"]
+[gd_scene load_steps=32 format=3 uid="uid://da6lj0afg0ugr"]
 
 [ext_resource type="Script" path="res://scenes/objects/player/player_movement.gd" id="1_vc2qc"]
 [ext_resource type="Texture2D" uid="uid://db2cioqw8skbc" path="res://assets/JamPlayer-Sheet.png" id="2_nlqjp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" path="res://scenes/swap.gdshader" id="5_8es1u"]
 [ext_resource type="Texture2D" uid="uid://dpidjuuhnw7pj" path="res://assets/white.png" id="6_6g78y"]
 [ext_resource type="Script" path="res://scenes/objects/player/SwapVFX.gd" id="7_60twd"]
+[ext_resource type="Script" path="res://scenes/objects/player/PlayerPickup.gd" id="10_pxefo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af1tn"]
 atlas = ExtResource("2_nlqjp")
@@ -177,8 +178,8 @@ size = Vector2(10, 15)
 z_index = 10
 collision_layer = 2
 script = ExtResource("1_vc2qc")
-max_horizontal_speed = 100
-acceleration = 10
+max_horizontal_speed = 5000
+acceleration = 15
 gravity = 15
 extra_gravity_multiplier = 1.5
 jump_velocity = 250
@@ -228,6 +229,33 @@ texture = ExtResource("6_6g78y")
 expand_mode = 1
 script = ExtResource("7_60twd")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 24.0
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PotionSlotBackground" type="Panel" parent="Camera2D/CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="PotionSlot" type="Control" parent="Camera2D/CanvasLayer/MarginContainer/PotionSlotBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 4
@@ -239,6 +267,9 @@ shape = SubResource("RectangleShape2D_himjt")
 
 [node name="Death" type="Node2D" parent="PickupArea"]
 script = ExtResource("4_08wnq")
+
+[node name="Pickup" type="Node2D" parent="PickupArea"]
+script = ExtResource("10_pxefo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

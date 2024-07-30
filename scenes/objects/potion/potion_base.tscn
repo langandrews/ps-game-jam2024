@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwo8ts2h6vlsu"]
+
+[ext_resource type="Script" path="res://scenes/objects/potion/Potion.gd" id="1_36rpr"]
+[ext_resource type="Script" path="res://scenes/objects/potion/DimensionEnabled.gd" id="1_dqpu0"]
+[ext_resource type="Texture2D" uid="uid://jabq5iaytsx4" path="res://assets/potion-Sheet.png" id="2_inyo1"]
+[ext_resource type="Script" path="res://scenes/objects/potion/OnPickup.gd" id="4_wmv4p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fgk1y"]
+radius = 6.0
+height = 14.0
+
+[node name="PotionBase" type="Node2D"]
+script = ExtResource("1_36rpr")
+
+[node name="PotionSpriteLight" type="Sprite2D" parent="."]
+texture = ExtResource("2_inyo1")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+script = ExtResource("1_dqpu0")
+
+[node name="PotionSpriteDark" type="Sprite2D" parent="."]
+texture = ExtResource("2_inyo1")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+script = ExtResource("1_dqpu0")
+is_dark = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("4_wmv4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_fgk1y")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

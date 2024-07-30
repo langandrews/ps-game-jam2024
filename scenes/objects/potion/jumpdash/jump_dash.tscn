@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnqtc7ln01w1r"]
+
+[ext_resource type="PackedScene" uid="uid://bwo8ts2h6vlsu" path="res://scenes/objects/potion/potion_base.tscn" id="1_q2p66"]
+[ext_resource type="Script" path="res://scenes/objects/potion/jumpdash/jump_dash.gd" id="2_mvco8"]
+
+[node name="JumpDash" instance=ExtResource("1_q2p66")]
+script = ExtResource("2_mvco8")
+
+[node name="PotionSpriteLight" parent="." index="0"]
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="PotionSpriteDark" parent="." index="1"]
+region_rect = Rect2(0, 0, 16, 16)

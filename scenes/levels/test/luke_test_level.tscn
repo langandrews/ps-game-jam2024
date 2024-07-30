@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx2fton4oi0if"]
+[gd_scene load_steps=13 format=3 uid="uid://cx2fton4oi0if"]
 
 [ext_resource type="PackedScene" uid="uid://da6lj0afg0ugr" path="res://scenes/objects/player/player.tscn" id="1_abqcj"]
 [ext_resource type="PackedScene" uid="uid://ct788nxu164yj" path="res://scenes/killzone.tscn" id="2_jqybw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://DimensionShifter.gd" id="5_qyu62"]
 [ext_resource type="PackedScene" uid="uid://cgbde1t0kl7m0" path="res://scenes/objects/flag/flag.tscn" id="6_77yyr"]
 [ext_resource type="PackedScene" uid="uid://dunwwxk0qalhp" path="res://scenes/objects/spikes/spikes.tscn" id="7_2lxt7"]
+[ext_resource type="PackedScene" uid="uid://dnqtc7ln01w1r" path="res://scenes/objects/potion/jumpdash/jump_dash.tscn" id="8_r7bcb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_87kcq"]
 
@@ -158,3 +159,6 @@ position = Vector2(344, 368)
 
 [node name="Spikes" parent="." instance=ExtResource("7_2lxt7")]
 position = Vector2(88, 0)
+
+[node name="JumpDash" parent="." instance=ExtResource("8_r7bcb")]
+position = Vector2(-24, -24)
