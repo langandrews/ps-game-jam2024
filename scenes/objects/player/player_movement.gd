@@ -20,6 +20,7 @@ var reset_timer = 0.0
 var is_jumping = false
 var is_dashing = false
 var has_gravity = true
+var is_bonus_gravity_disabled = false
 var is_double_jumping = false
 var current_max_horizontal_speed = 0.0
 
@@ -45,10 +46,12 @@ func handle_movement(delta):
 	update_coyote()
 	
 	if has_gravity:
-		velocity.y += gravity * (extra_gravity_multiplier if velocity.y > 0 else 1.0)
+		velocity.y += gravity * (extra_gravity_multiplier if velocity.y > 0 and not is_bonus_gravity_disabled else 1.0)
 		velocity.x *= friction_factor 
 		
-	if is_on_floor(): velocity.y = 0
+	if is_on_floor(): 
+		velocity.y = 0
+		is_bonus_gravity_disabled = false
 	
 	var input_horizontal := Input.get_axis("move_left", "move_right")
 	velocity.x += (input_horizontal * acceleration)
@@ -56,6 +59,7 @@ func handle_movement(delta):
 	#if abs(input_horizontal) < 0.01 and is_on_floor():
 	
 	if is_double_jumping:
+		is_bonus_gravity_disabled = true
 		is_double_jumping = false
 		is_jumping = false
 		velocity.y = -jump_velocity
@@ -73,6 +77,7 @@ func handle_movement(delta):
 		is_jumping = false
 	
 	if is_dashing:
+		is_bonus_gravity_disabled = true
 		is_dashing = false
 		has_gravity = false
 		velocity.x = (jump_velocity if velocity.x >= 0 else -jump_velocity) * 1.5
