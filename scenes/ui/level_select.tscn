@@ -41,10 +41,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -546.0
-offset_top = 98.0
-offset_right = 546.0
-offset_bottom = 619.0
+offset_left = -280.0
+offset_top = 105.0
+offset_right = 280.0
+offset_bottom = 335.0
 grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="LevelSelect/LevelHolder"]
@@ -63,5 +63,5 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 10
+columns = 5
 script = ExtResource("2_hxvrd")
