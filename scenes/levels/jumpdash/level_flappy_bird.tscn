@@ -311,22 +311,22 @@ position = Vector2(152, 328)
 position = Vector2(184, 328)
 
 [node name="JumpDash6" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(216, 360)
+position = Vector2(216, 376)
 
 [node name="JumpDash7" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(248, 360)
+position = Vector2(248, 376)
 
 [node name="JumpDash8" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(280, 360)
+position = Vector2(280, 376)
 
 [node name="JumpDash9" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(312, 360)
+position = Vector2(312, 376)
 
 [node name="JumpDash10" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(344, 392)
+position = Vector2(344, 376)
 
 [node name="JumpDash11" parent="PotionSet" instance=ExtResource("8_764h3")]
-position = Vector2(376, 392)
+position = Vector2(376, 376)
 
 [node name="JumpDash12" parent="PotionSet" instance=ExtResource("8_764h3")]
 position = Vector2(216, 328)
@@ -335,73 +335,82 @@ position = Vector2(216, 328)
 position = Vector2(16, -16)
 
 [node name="JumpDash" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(56, 328)
+position = Vector2(56, 320)
 
 [node name="JumpDash2" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(88, 328)
+position = Vector2(88, 320)
 
 [node name="JumpDash3" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(120, 328)
+position = Vector2(120, 320)
+
+[node name="JumpDash12" parent="PotionSet2" instance=ExtResource("8_764h3")]
+position = Vector2(152, 320)
+
+[node name="JumpDash13" parent="PotionSet2" instance=ExtResource("8_764h3")]
+position = Vector2(184, 320)
+
+[node name="JumpDash14" parent="PotionSet2" instance=ExtResource("8_764h3")]
+position = Vector2(376, 368)
 
 [node name="JumpDash4" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(136, 376)
+position = Vector2(136, 392)
 
 [node name="JumpDash5" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(168, 376)
+position = Vector2(168, 392)
 
 [node name="JumpDash6" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(216, 360)
+position = Vector2(216, 368)
 
 [node name="JumpDash7" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(248, 360)
+position = Vector2(248, 368)
 
 [node name="JumpDash8" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(280, 360)
+position = Vector2(280, 368)
 
 [node name="JumpDash9" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(296, 408)
+position = Vector2(296, 344)
 
 [node name="JumpDash10" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(328, 376)
+position = Vector2(344, 416)
 
 [node name="JumpDash11" parent="PotionSet2" instance=ExtResource("8_764h3")]
-position = Vector2(376, 392)
+position = Vector2(360, 344)
 
 [node name="PotionSet3" type="Node2D" parent="."]
 position = Vector2(16, 16)
 
 [node name="JumpDash" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(56, 328)
+position = Vector2(56, 336)
 
 [node name="JumpDash2" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(88, 328)
+position = Vector2(88, 336)
 
 [node name="JumpDash3" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(120, 328)
+position = Vector2(120, 336)
 
 [node name="JumpDash4" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(152, 328)
+position = Vector2(152, 336)
 
 [node name="JumpDash5" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(184, 328)
+position = Vector2(184, 336)
 
 [node name="JumpDash6" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(216, 360)
+position = Vector2(232, 312)
 
 [node name="JumpDash7" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(248, 360)
+position = Vector2(264, 312)
 
 [node name="JumpDash8" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(280, 360)
+position = Vector2(312, 384)
 
 [node name="JumpDash9" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(312, 360)
+position = Vector2(312, 336)
 
 [node name="JumpDash10" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(344, 360)
+position = Vector2(344, 336)
 
 [node name="JumpDash11" parent="PotionSet3" instance=ExtResource("8_764h3")]
-position = Vector2(360, 344)
+position = Vector2(328, 312)
 
 [node name="Flag2" parent="." instance=ExtResource("6_0cbh5")]
 position = Vector2(512, -96)
