@@ -23,6 +23,8 @@ var has_gravity = true
 var is_double_jumping = false
 var current_max_horizontal_speed = 0.0
 
+var is_dead = false
+
 func _ready():
 	current_max_horizontal_speed = max_horizontal_speed
 	SignalBus.DoubleJump.connect(double_jump)
@@ -32,6 +34,8 @@ func _physics_process(delta):
 	handle_movement(delta)
 
 func handle_movement(delta):
+	if is_dead: return
+	
 	if Input.is_action_just_pressed("use_potion"):
 		for child in potion_slot.get_children():
 			if child is Potion:

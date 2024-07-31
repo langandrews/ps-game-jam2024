@@ -17,10 +17,14 @@ var offsets := [
 	Vector2(0, 2),
 ]
 
+var is_disabled = false
+
 func _ready():
 	SignalBus.OnSwap.connect(swap)
+	SignalBus.Death.connect(func(): is_disabled = true)
 
 func _physics_process(_delta):
+	if is_disabled: return
 	if Input.is_action_just_pressed("swap_dimensions"):
 		update_buffer()
 	elif not is_buffering(): return

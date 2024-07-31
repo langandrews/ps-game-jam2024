@@ -6,3 +6,4 @@ signal OnSwap(isDark: bool)
 
 signal Dash()
 signal DoubleJump()
+signal Death()
