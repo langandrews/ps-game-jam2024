@@ -12,3 +12,7 @@ region_rect = Rect2(0, 16, 16, 16)
 
 [node name="PotionSpriteDark" parent="." index="1"]
 region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, -1)
+scale = Vector2(1.52, 1.72)
