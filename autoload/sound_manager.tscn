@@ -24,7 +24,7 @@ volume_db = -6.46
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qmvel")
-volume_db = -9.043
+volume_db = -5.167
 
 [node name="GrabSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_efwqr")
@@ -32,7 +32,9 @@ volume_db = -10.336
 
 [node name="MusicMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_cvexa")
+volume_db = -11.627
 autoplay = true
 
 [node name="MusicOther" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8raia")
+volume_db = -10.982

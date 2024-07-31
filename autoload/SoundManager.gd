@@ -16,6 +16,7 @@ func _ready():
 	SignalBus.DoubleJump.connect(func(): play_dash_sound(false))
 	SignalBus.Death.connect(play_death_sound)
 	SignalBus.PotionGrab.connect(play_potion_grab)
+	SignalBus.Jumped.connect(play_jump_sound)
 
 func play_swap_sound(is_dark: bool):
 	var dark_pitch = randf_range(0.9, 1.0)
@@ -52,4 +53,5 @@ func play_potion_grab():
 	death_sound.play()
 
 func swap_music():
-	pass
+	music_main.stop()
+	music_other.play()

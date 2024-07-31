@@ -89,6 +89,7 @@ func handle_movement(delta):
 	move_and_slide()
 
 func jump():
+	SignalBus.Jumped.emit()
 	is_jumping = true
 	velocity.y = -jump_velocity
 	jump_start_frame = Engine.get_physics_frames()

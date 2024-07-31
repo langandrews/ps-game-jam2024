@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://c2gcde2g6v20u"]
 
-[ext_resource type="PackedScene" uid="uid://b0xq1o708dwpv" path="res://scenes/levels/jumpdash/level_big_gap_dash.tscn" id="1_1gdn4"]
+[ext_resource type="PackedScene" path="res://scenes/levels/jumpdash/level_big_gap_dash.tscn" id="1_1gdn4"]
 [ext_resource type="Script" path="res://data/types/level_data.gd" id="2_0vgy1"]
 
 [resource]

@@ -4,5 +4,6 @@ extends PickupGrabber
 
 func pickup(object):
 	if object is Potion:
+		SignalBus.PotionGrab.emit()
 		object.position = Vector2.ZERO
 		object.reparent(potion_slot, false)
