@@ -159,6 +159,9 @@ dark_offset = Vector2(0, 432)
 [node name="Flag" parent="." instance=ExtResource("6_3lpou")]
 position = Vector2(-712, 0)
 
+[node name="Flag2" parent="Flag" instance=ExtResource("6_3lpou")]
+position = Vector2(1025, 1)
+
 [node name="Spikes" parent="." instance=ExtResource("7_8px1h")]
 position = Vector2(-680, 0)
 
@@ -207,14 +210,11 @@ position = Vector2(864, 433)
 [node name="JumpDash" parent="." instance=ExtResource("8_b8kgy")]
 position = Vector2(-635, -75)
 
+[node name="JumpDash2" parent="JumpDash" instance=ExtResource("8_b8kgy")]
+position = Vector2(610, 65)
+
 [node name="JumpDashInverse" parent="." instance=ExtResource("9_ckihs")]
 position = Vector2(-712, -40)
 
-[node name="JumpDash2" parent="." instance=ExtResource("8_b8kgy")]
-position = Vector2(-25, -10)
-
-[node name="JumpDash3" parent="." instance=ExtResource("8_b8kgy")]
-position = Vector2(158, 350)
-
-[node name="Flag2" parent="." instance=ExtResource("6_3lpou")]
-position = Vector2(313, 1)
+[node name="JumpDash3" parent="JumpDashInverse" instance=ExtResource("8_b8kgy")]
+position = Vector2(870, 390)
