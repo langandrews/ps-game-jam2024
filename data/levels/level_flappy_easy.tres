@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://co4y1n83qmprd"]
+
+[ext_resource type="PackedScene" uid="uid://dldh1pp45jn8b" path="res://scenes/levels/jumpdash/level_flappy_bird_easier.tscn" id="1_b50qc"]
+[ext_resource type="Script" path="res://data/types/level_data.gd" id="2_vnnd0"]
+
+[resource]
+script = ExtResource("2_vnnd0")
+scene = ExtResource("1_b50qc")
