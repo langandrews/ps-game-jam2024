@@ -163,10 +163,10 @@ position = Vector2(456, -208)
 position = Vector2(-24, 344)
 
 [node name="JumpDash2" parent="." instance=ExtResource("8_7v81q")]
-position = Vector2(208, 312)
+position = Vector2(200, 312)
 
 [node name="JumpDash3" parent="." instance=ExtResource("8_7v81q")]
-position = Vector2(320, 264)
+position = Vector2(312, 264)
 
 [node name="JumpDashInverse" parent="." instance=ExtResource("9_uydeq")]
 position = Vector2(-712, -40)
