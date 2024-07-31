@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://co4y1n83qmprd"]
 
-[ext_resource type="PackedScene" uid="uid://cx2fton4oi0if" path="res://scenes/levels/test/luke_test_level.tscn" id="1_xrrvj"]
+[ext_resource type="PackedScene" uid="uid://dldh1pp45jn8b" path="res://scenes/levels/jumpdash/level_flappy_bird_easier.tscn" id="1_8ox8q"]
 [ext_resource type="Script" path="res://data/types/level_data.gd" id="2_5knoe"]
 
 [resource]
 script = ExtResource("2_5knoe")
-scene = ExtResource("1_xrrvj")
+scene = ExtResource("1_8ox8q")
