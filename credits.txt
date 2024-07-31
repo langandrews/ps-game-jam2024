@@ -1,0 +1,36 @@
+CREATORS
+
+Luke Justice
+Andrew Lang
+
+
+
+TOOLS
+
+Godot 4.2.2
+Aseprite
+
+
+
+AUDIO
+
+https://freesound.org/people/saintsamael/sounds/539934/
+"DISTORT_ - Mic Grab #1.wav" by saintsamael
+
+https://freesound.org/people/s-cheremisinov/sounds/402183/
+"Live Swoosh_01.wav" by s-cheremisinov
+
+https://freesound.org/people/farzyno/sounds/661297/
+"Cartoon Jump.wav" by farzyno
+
+https://freesound.org/people/MrFossy/sounds/590006/
+"SFX_SQUELCH_slayer_impulse_138.wav" by MrFossy
+
+https://freesound.org/people/el_boss/sounds/665181/
+"Item or Material Pickup Pop 3 of 3" by el_boss
+
+https://freesound.org/people/chocofactory/sounds/699689/
+"8 bit loop" by chocofactory
+
+https://freesound.org/people/EVRetro/sounds/583613/
+"8-bit Brisk Music Loop.wav" by EVRetro
