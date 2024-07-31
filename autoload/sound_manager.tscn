@@ -1,10 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhawrnytcjdbd"]
+[gd_scene load_steps=9 format=3 uid="uid://bhawrnytcjdbd"]
 
 [ext_resource type="Script" path="res://autoload/SoundManager.gd" id="1_6y73q"]
 [ext_resource type="AudioStream" uid="uid://cds5j4vs83krs" path="res://assets/sounds/swap.wav" id="2_jqohs"]
+[ext_resource type="AudioStream" uid="uid://p5vyy2q1ary4" path="res://assets/sounds/jump.wav" id="3_fp26k"]
+[ext_resource type="AudioStream" uid="uid://r472knya6en1" path="res://assets/sounds/jumpdash.wav" id="4_jd2jn"]
+[ext_resource type="AudioStream" uid="uid://btqdw3hrrclbb" path="res://assets/sounds/impale.wav" id="5_qmvel"]
+[ext_resource type="AudioStream" uid="uid://b7ugsq8vajx72" path="res://assets/sounds/pickup.wav" id="6_efwqr"]
+[ext_resource type="AudioStream" uid="uid://d05p1md1bvbx7" path="res://assets/sounds/main_music.mp3" id="7_cvexa"]
+[ext_resource type="AudioStream" uid="uid://cnitpjrljnikw" path="res://assets/sounds/other_music.wav" id="8_8raia"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_6y73q")
 
 [node name="SwapSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_jqohs")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fp26k")
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jd2jn")
+volume_db = -6.46
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qmvel")
+volume_db = -9.043
+
+[node name="GrabSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_efwqr")
+volume_db = -10.336
+
+[node name="MusicMain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cvexa")
+autoplay = true
+
+[node name="MusicOther" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8raia")
